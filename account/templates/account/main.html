@@ -1,0 +1,31 @@
+<html lang = "kor">
+    <head>
+     
+    </head>
+    
+    <body>
+        <div>
+            
+
+           {{request.session.user}}
+            <h1>메인 페이지</h1>
+        
+            <form id="login_form" actioin ="{% url 'main' %}" method="post">
+                {% csrf_token %}
+                <div >
+                    아이디:<input type="text" id = 'id' name="id"><br>
+                    비밀번호:<input type="passWord" id = 'password' name ="password">
+                    <input type="submit" value="로그인">
+                </div>
+            </form>
+            
+            <form id="logout_form" actioin ="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <div >
+                    <input type="submit" value="로그아웃">
+                </div>
+            </form>
+      
+        </div>
+    </body>
+</html>
